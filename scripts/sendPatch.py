@@ -67,17 +67,17 @@ for patchDir in patchDirectories:
             ftp.storbinary(f'STOR {sdPath}', open(fullPath, 'rb'))
 
 ensuredirectory(ftp, '/atmosphere', 'contents')
-ensuredirectory(ftp, '/atmosphere/contents', "01006A800016E000")
-ensuredirectory(ftp, f'/atmosphere/contents/01006A800016E000', 'exefs')
+ensuredirectory(ftp, '/atmosphere/contents', "01003BC0000A0000")
+ensuredirectory(ftp, f'/atmosphere/contents/01003BC0000A0000', 'exefs')
 
 binaryPath = f'{os.path.basename(os.getcwd())}{version}.nso'
 print(binaryPath)
 if os.path.isfile(binaryPath):
-    sdPath = f'/atmosphere/contents/01006A800016E000/exefs/subsdk9'
+    sdPath = f'/atmosphere/contents/01003BC0000A0000/exefs/subsdk9'
     print(f'Sending {sdPath}')
     ftp.storbinary(f'STOR {sdPath}', open(binaryPath, 'rb'))
 
 metaPath = f'cross.npdm'
-sdPath = '/atmosphere/contents/01006A800016E000/exefs/main.npdm'
+sdPath = '/atmosphere/contents/01003BC0000A0000/exefs/main.npdm'
 print(f'Sending {sdPath}')
-ftp.storbinary('STOR /atmosphere/contents/01006A800016E000/exefs/main.npdm', open(metaPath, 'rb'))
+ftp.storbinary('STOR /atmosphere/contents/01003BC0000A0000/exefs/main.npdm', open(metaPath, 'rb'))
