@@ -16,3 +16,4 @@ This project is derived from OdysseyReversed and Starlight
 # Credits
 - devkitA64
 - libnx - switch build rules
+- 3096
